@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useContext} from 'react';
 import './App.css';
+import Formulario from '../src/components/Formulario/index'
+import {AuthContext, AuthProvider} from '../src/components/context/auth'
 
 function App() {
+  
+  const Alo = useContext(AuthContext)
+
+  function Teste(e){
+
+    e.preventDefault()
+
+    console.log('testando')
+
+
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <>
+    <h1> Hello World </h1>
+    <Formulario Teste={() => Teste } />
+    {console.log(Alo)}
+    </>
+    
+
   );
 }
 
